@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 export let Products
 export let Carts
-export let User
+export let Users
 export let Tickets
 
 switch (config.PERSISTENCE) {
@@ -16,7 +16,7 @@ switch (config.PERSISTENCE) {
         const { default: TicketsMongo } = await import("./mongo/ticket.mongo.js")
         Products = ProductsMongo
         Carts = CartsMongo
-        User = UsersMongo
+        Users = UsersMongo
         Tickets = TicketsMongo
         break;
     default:
