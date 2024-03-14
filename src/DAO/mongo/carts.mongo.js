@@ -3,7 +3,7 @@ import cartModel from "./model/carts.model.js";
 export default class carts {
     async getCartsById(cid) {
         try {
-            return cartModel.findOne({ _id: cid }).lean()
+            return cartModel.findOne({ _id: cid }).populate("products.product").exec()
         } catch (error) { console.error("Error en getCarts:", error.message); }
     }
     async createCart() {
