@@ -4,4 +4,5 @@ export default class usersRepository {
     }
     async createUser(user) { return this.dao.createUser(user) }
     async findUserByEmail(email) { return this.dao.findByEmail(email) }
+    async updateUser(id, newData) { return this.dao.updateUser(id, newData) }
 }
