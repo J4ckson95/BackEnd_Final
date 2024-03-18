@@ -2,7 +2,8 @@ import { usersServices, cartsServices } from "../Services/main.js"
 import { createHas, validateHas, generateToken } from "../utils.js"
 export const createUser = async (req, res) => {
     try {
-        const { email, password, ...rest } = req.body
+        const { email, password, terminos, ...rest } = req.body
+        console.log(email, password, rest);
         const user = await usersServices.findUserByEmail(email)
         if (user) return res.send(false)
         const newCart = await cartsServices.createCart()
