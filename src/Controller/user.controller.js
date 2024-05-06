@@ -21,7 +21,7 @@ export const validateUser = async (req, res) => {
         if (!user) return res.send({ user: false })
         if (!validateHas(password, user)) return res.send({ password: false })
         const token = generateToken(user)
-        res.cookie("authToken", token, { maxAge: 900000 }).send({ status: 200 })
+        res.cookie("authToken", token, { maxAge: 90000000 }).send({ status: 200 })
     } catch (error) { console.error("Error al validar usuario", error.message) }
 }
 export const getDataUser = async (req, res) => {
