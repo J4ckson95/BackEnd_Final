@@ -5,6 +5,7 @@ import cors from "cors"
 import productsRouter from "./Router/products.router.js"
 import userRouter from "./Router/users.router.js"
 import cartRouter from "./Router/carts.router.js"
+import paymentStripe from "./Router/stipePayment.router.js"
 import initializedPassport from "./Config/authGoogle.config.js";
 import passport from "passport";
 import session from "express-session"
@@ -29,5 +30,6 @@ app.use(passport.session())
 app.use("/api/products", productsRouter)
 app.use("/api/users", userRouter)
 app.use("/api/carts", cartRouter)
+app.use("/api/payment", paymentStripe)
 
 app.listen(config.PORT, () => console.log("Running Server ..!"))

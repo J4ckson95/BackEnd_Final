@@ -7,5 +7,6 @@ export default {
     DBNAME: process.env.DBNAME,
     PRIVATE_KEY: process.env.PRIVATE_KEY,
     clientID: process.env.clientID,
-    clientSecret: process.env.clientSecret
+    clientSecret: process.env.clientSecret,
+    StripeSecrectKey: process.env.StripeSecrectKey
 }
